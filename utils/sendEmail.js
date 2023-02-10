@@ -1,6 +1,6 @@
 /**
  * Send email service for forgot password
- * @author Yousuf Kalim
+ * @author Shuja Naqvi
  */
 var nodemailer = require("nodemailer");
 const sender_name = process.env.MAILER_DOMAIN;

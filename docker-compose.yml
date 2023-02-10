@@ -1,0 +1,23 @@
+version: "3"
+services:
+       share-box:
+           container_name: share-box
+           image: latest123/share-box-node
+           restart: always
+           build: .
+           ports:
+             - "7500:7500"
+           links:
+             - mongo
+       mongo:
+             container_name: mongo
+             image: mongo
+             volumes:
+               - ./data:/data/db
+             ports:
+               - '27018:27017'
+## This compose file defines two services: share-box and mongo
+## container_name field value are used to name the container created.
+## For the share-box service, I named it latest123/share-box-node. 
+## build field is where we specify the path to dockerfile to create the image
+##Second Service which is mongo i have pulled it from docker-registry
